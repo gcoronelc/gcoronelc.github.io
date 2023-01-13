@@ -6,19 +6,19 @@
     <h6 class="card-subtitle text-secondary"><b>VIGENCIA: Desde el 11.DIC.2022 por 5 días</b></h6>
   </div>
   <div class="card-body">
-    <div class="row justify-content-center">
-      <div class="col-lg-6">
-        <img src="img/egcc9.png" class="img-fluid" alt="ERIC GUSTAVO CORONEL CASTILLO">
-      </div>
-    </div>
+
     <div class="row">
       <div class="col">
         <div class="card">
           <div class="card-header">
             FUNDAMENTOS DE PROGRAMACIÓN CON JAVA
           </div>
-          <div class="card-body">
-            <div class="youtube-player" data-id="1mcdHGywMvk"></div>
+          <div class="card-body embed-responsive embed-responsive-16by9">
+            <iframe
+              src="https://www.youtube.com/embed/1mcdHGywMvk?list=PLIRq7nByT7aRxGx0N63e8W-Tc3YFFS5eV&autoplay=1&rel=0"
+              title="#UDEMY - FUNDAMENTOS DE #PROGRAMACIÓN CON #JAVA - PRESENTACIÓN" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
           </div>
           <div class="card-footer">
             <a class="btn btn-info btn-block" target="_blank"
@@ -31,8 +31,12 @@
           <div class="card-header">
             CURSO PROFESIONAL DE JAVA ORIENTADO A OBJETOS
           </div>
-          <div class="card-body">
-            <div class="youtube-player" data-id="EKlwF12-l9Y"></div>
+          <div class="card-body embed-responsive embed-responsive-16by9">
+            <iframe
+              src="https://www.youtube.com/embed/EKlwF12-l9Y?list=PLIRq7nByT7aRuBgD4UVRjrcUZFM8Fkbut&autoplay=1&rel=0"
+              title="UDEMY - JAVA ORIENTADO A OBJETOS - PRESENTACION" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
           </div>
           <div class="card-footer">
             <a class="btn btn-info btn-block" target="_blank"
@@ -42,14 +46,19 @@
         </div>
       </div>
     </div>
-    <div class="row">
+
+    <div class="row mt-3">
       <div class="col">
         <div class="card">
           <div class="card-header">
             PROGRAMACIÓN DE BASES DE DATOS ORACLE CON JAVA JDBC
           </div>
-          <div class="card-body">
-            <div class="youtube-player" data-id="MR53Xgeg28Y"></div>
+          <div class="card-body embed-responsive embed-responsive-16by9">
+            <iframe
+              src="https://www.youtube.com/embed/MR53Xgeg28Y?list=PLIRq7nByT7aQlHn2S4gBdEQZXfgYMMKC2&autoplay=1&rel=0"
+              title="UDEMY - JAVA JDBC ORACLE" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
           </div>
           <div class="card-footer">
             <a class="btn btn-info btn-block" target="_blank"
@@ -63,8 +72,12 @@
           <div class="card-header">
             PROGRAMACIÓN DE BASES DE DATOS ORACLE CON PL/SQL
           </div>
-          <div class="card-body">
-            <div class="youtube-player" data-id="qf5IF2dJtQc"></div>
+          <div class="card-body embed-responsive embed-responsive-16by9">
+            <iframe 
+              src="https://www.youtube.com/embed/qf5IF2dJtQc?list=PLIRq7nByT7aTgGKOvpRpZ2WvDSlweucLc&autoplay=1&rel=0"
+              title="#UDEMY: PROGRAMACIÓN DE BASE DE DATOS ORACLE CON PL/SQL" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
           </div>
           <div class="card-footer">
             <a class="btn btn-info btn-block" target="_blank"
@@ -76,9 +89,31 @@
   </div>
 </div>
 <script>
-
-  $(document).ready(function () {
-    fnCargarVideos();
-  });
-
+  /* Light YouTube Embeds by @labnol */
+  /* Web: http://labnol.org/?p=27941 */
+  document.addEventListener("DOMContentLoaded",
+    function () {
+      var div, n,
+        v = document.getElementsByClassName("youtube-player");
+      for (n = 0; n < v.length; n++) {
+        div = document.createElement("div");
+        div.setAttribute("data-id", v[n].dataset.id);
+        div.innerHTML = labnolThumb(v[n].dataset.id);
+        div.onclick = labnolIframe;
+        v[n].appendChild(div);
+      }
+    });
+  function labnolThumb(id) {
+    var thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">',
+      play = '<div class="play"></div>';
+    return thumb.replace("ID", id) + play;
+  }
+  function labnolIframe() {
+    var iframe = document.createElement("iframe");
+    var embed = "https://www.youtube.com/embed/ID?autoplay=1";
+    iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("allowfullscreen", "1");
+    this.parentNode.replaceChild(iframe, this);
+  }
 </script>
